@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:ott_demo/src/Redux/Action/action.dart';
+import 'package:ott_demo/src/Redux/Store/index.dart';
 import 'package:ott_demo/src/Router/route.dart';
 import 'package:ott_demo/src/Utils/Arguments.dart';
+import 'package:ott_demo/src/Utils/Storage.dart';
 import 'package:ott_demo/src/components/Banner/HomeBanner.dart';
 import 'package:ott_demo/src/components/Card/CategoryCard.dart';
+import 'package:ott_demo/src/components/Drawer/index.dart';
 import 'package:ott_demo/src/components/Header/HomeHeader.dart';
 import 'package:ott_demo/src/components/Lists/CardListWithTitle.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   List bannerData = [1, 2, 3, 4, 5];
+
   List categoryData = [
     {"image": "cat1.jpg", "title": "Discover"},
     {"image": "cat2.jpg", "title": "Category"},
@@ -164,7 +175,7 @@ class Home extends StatelessWidget {
       "name": "the last samurai",
       "type": "Adventure & Full of Action",
       "rating": 4.3,
-      "statusBar": 'dark',
+      "statusBar": 'light',
       "description":
           "In 1876, Former U.S. Army Captain Nathan Algren, a bitter alcoholic traumatized by the atrocities he committed during the American Indian Wars, is approached by his former commanding officer Colonel Bagley to train the newly created Imperial Japanese Army for a forward-thinking Japanese businessman Omura, who intends to use the army to suppress a Samurai-headed rebellion against Japan's new emperor. Despite his hatred of Bagley for his role in the Indian Wars, an impoverished Algren takes the job for the money, and is accompanied to Japan by his old friend, Sergeant Zebulon Gant. Upon arriving, Algren meets Simon Graham, a British translator knowledgeable about the samurai.",
       "screenshoots": [
@@ -189,17 +200,20 @@ class Home extends StatelessWidget {
   ];
 
   @override
+  void initState() {
+    _checkAuth();
+    super.initState();
+  }
+
+  void _checkAuth() async {
+    Map<String, dynamic> result = await Storage().getItem(key: "auth");
+    if (result["body"] != '') {
+      StoreProvider.of<AppState>(context).dispatch(UserLogin(result['body']));
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-    //         statusBarColor: Color(Colors.white.value),
-    //         /* set Status bar color in Android devices. */
-
-    //         statusBarIconBrightness: Brightness.dark,
-    //         /* set Status bar icons color in Android devices.*/
-
-    //         statusBarBrightness:
-    //             Brightness.light) /* set Status bar icon color in iOS. */
-    //     );
     return Scaffold(
       // backgroundColor: Color(Colors.white.value),
       body: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -266,30 +280,7 @@ class Home extends StatelessWidget {
                 ),
               ))),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            Container(
-              color: Colors.red,
-              // height: 50,
-              child: SafeArea(
-                  child: Container(
-                      padding: EdgeInsets.only(left: 15),
-                      child: Row(
-                        children: <Widget>[
-                          Container(
-                            height: 70,
-                            width: 70,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                color: Colors.blue),
-                          )
-                        ],
-                      ))),
-            )
-          ],
-        ),
+        child: DrawerContent(),
       ),
     );
   }

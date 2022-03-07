@@ -1,0 +1,126 @@
+PODS:
+  - Firebase/CoreOnly (8.11.0):
+    - FirebaseCore (= 8.11.0)
+  - Firebase/Database (8.11.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 8.11.0)
+  - firebase_core (1.12.0):
+    - Firebase/CoreOnly (= 8.11.0)
+    - Flutter
+  - firebase_database (9.0.6):
+    - Firebase/Database (= 8.11.0)
+    - firebase_core
+    - Flutter
+  - FirebaseCore (8.11.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+  - FirebaseCoreDiagnostics (8.11.0):
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+    - nanopb (~> 2.30908.0)
+  - FirebaseDatabase (8.11.0):
+    - FirebaseCore (~> 8.0)
+    - leveldb-library (~> 1.22)
+  - Flutter (1.0.0)
+  - flutter_webrtc (0.7.1):
+    - Flutter
+    - Libyuv (= 1703)
+    - WebRTC-SDK (= 93.4577.01)
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - GoogleDataTransport (9.1.2):
+    - GoogleUtilities/Environment (~> 7.2)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Environment (7.7.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.7.0):
+    - GoogleUtilities/Environment
+  - leveldb-library (1.22.1)
+  - Libyuv (1703)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - path_provider_ios (0.0.1):
+    - Flutter
+  - PromisesObjC (2.0.0)
+  - shared_preferences_ios (0.0.1):
+    - Flutter
+  - Toast (4.0.0)
+  - video_player_avfoundation (0.0.1):
+    - Flutter
+  - WebRTC-SDK (93.4577.01)
+
+DEPENDENCIES:
+  - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - firebase_database (from `.symlinks/plugins/firebase_database/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_webrtc (from `.symlinks/plugins/flutter_webrtc/ios`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Firebase
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseDatabase
+    - GoogleDataTransport
+    - GoogleUtilities
+    - leveldb-library
+    - Libyuv
+    - nanopb
+    - PromisesObjC
+    - Toast
+    - WebRTC-SDK
+
+EXTERNAL SOURCES:
+  firebase_core:
+    :path: ".symlinks/plugins/firebase_core/ios"
+  firebase_database:
+    :path: ".symlinks/plugins/firebase_database/ios"
+  Flutter:
+    :path: Flutter
+  flutter_webrtc:
+    :path: ".symlinks/plugins/flutter_webrtc/ios"
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
+  shared_preferences_ios:
+    :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  video_player_avfoundation:
+    :path: ".symlinks/plugins/video_player_avfoundation/ios"
+
+SPEC CHECKSUMS:
+  Firebase: 44dd9724c84df18b486639e874f31436eaa9a20c
+  firebase_core: 443bccfd6aa6b42f07be365b500773dc69db2d87
+  firebase_database: 0ae3ce8034d44bd151770534edefef869df88b04
+  FirebaseCore: 2f4f85b453cc8fea4bb2b37e370007d2bcafe3f0
+  FirebaseCoreDiagnostics: 64d9709d804a6c25bd77841371c1fcfd909d5601
+  FirebaseDatabase: ff9b4c7bee14d9f561f26c64a28ac083989f03d5
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  flutter_webrtc: 611cab01a48b1d20e2b2409783c182134b8729e5
+  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
+  GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
+  leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  Libyuv: 5f79ced0ee66e60a612ca97de1e6ccacd187a437
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  path_provider_ios: 7d7ce634493af4477d156294792024ec3485acd5
+  PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  video_player_avfoundation: e489aac24ef5cf7af82702979ed16f2a5ef84cff
+  WebRTC-SDK: 166b0e161d93d4b961f410bf7966a634f42aa17d
+
+PODFILE CHECKSUM: 9d9f332f6ea596be0ee6fcc30286154b32ccf499
+
+COCOAPODS: 1.11.2

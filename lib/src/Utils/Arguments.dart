@@ -17,3 +17,16 @@ class SingleMovieArguments {
     this.statusBar = data['statusBar'];
   }
 }
+
+class SingleChatArguments {
+  final String name;
+  final String imageUrl;
+  final String roomId;
+  final String remoteUserId;
+
+  SingleChatArguments(
+      {required this.name,
+      required this.imageUrl,
+      required this.remoteUserId,
+      required this.roomId});
+}

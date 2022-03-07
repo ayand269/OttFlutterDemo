@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ott_demo/src/Router/route.dart';
 
 class HomeHeader extends StatelessWidget {
   @override
@@ -21,7 +22,9 @@ class HomeHeader extends StatelessWidget {
             height: 25,
           ),
           IconButton(
-              onPressed: null,
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.search);
+              },
               icon: Icon(
                 Icons.search,
                 color: Color(Colors.black87.value),
